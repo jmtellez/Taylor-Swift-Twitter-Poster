@@ -23,12 +23,18 @@ def get_albums(json_data):
     for album in json_data:
         albums.append(album)
     return albums
-    
+
+def is_tweetable(tweet):
+    if len(tweet) > 280:
+        return False
+    else:
+        return True
+
 def main():
     update = create_quoted_string(grab_lyrics())
-    try:
+    if is_tweetable(update):
         tweet(update)
-    except:
+    else:
         open('error.log','a').write(update).close()
 
 if __name__ == "__main__":
