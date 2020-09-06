@@ -7,10 +7,8 @@ settings = json.load(open('config.json',encoding="utf8"))
 
 def grab_lyrics():
     lyrics = json.load(open('lyrics.json',encoding="utf8"))
-    albums = ['Fearless','Speak Now','Red','1989','Reputation','Lover','Folklore']
-    random.seed(a=None, version=2)
-    album = lyrics[albums[random.randint(0,len(albums)-1)]]
-    return album[len(album)-1]
+    albums = get_albums(lyrics)
+    return random.choice(lyrics[random.choice(albums)])
 
 def create_quoted_string(lyric):
     lyric = '"' + lyric + '" - Taylor Swift'
@@ -20,6 +18,12 @@ def tweet(lyric):
     twitter = Twython(settings['consumer_key'], settings['consumer_secret'],settings['access_token'], settings['access_token_secret'])
     twitter.update_status(status=lyric)
 
+def get_albums(json_data):
+    albums = []
+    for album in json_data:
+        albums.append(album)
+    return albums
+    
 def main():
     update = create_quoted_string(grab_lyrics())
     try:
