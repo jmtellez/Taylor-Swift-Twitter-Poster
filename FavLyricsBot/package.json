@@ -1,0 +1,15 @@
+{
+  "name": "js-bot",
+  "version": "1.0.0",
+  "description": "Twitter Bot that tweets music lyrics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Juan Tellez",
+  "license": "ISC",
+  "dependencies": {
+    "properties-reader": "^2.1.1",
+    "twit": "^2.2.11"
+  }
+}
