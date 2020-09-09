@@ -7,14 +7,13 @@
 Once the project has been cloned, create `props.ini` file with the following twitter keys and tokens and on entry file `index.js`, give the path to your properties file:
 
 ```js
-
-#Twitter Access Token - props.ini
+// Twitter Access Token  props.ini
 consumer_key = <KEY>
 consumer_secret = <SECRET>
 access_token = <TOKEN>
 access_token_secret = <SECRET>
-
-
-#index.js
+```
+```js
+// index.js
 const properties = propertiesReader('./props.ini');
 ```
